@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/18 11:52:50 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/10/24 23:22:44 by kai-iou          ###   ########.fr       */
+/*   Created: 2024/10/24 22:09:57 by kai-iou           #+#    #+#             */
+/*   Updated: 2024/10/24 23:04:27 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
+size_t ft_strlen(const char *s)
+{
+	int i;
+	i = 0;
 
-int	ft_isalpha	(int c);
-int	ft_isdigit	(int c);
-int ft_isalnum	(int c);
-int ft_isascii	(int c);
-int ft_isprint	(int c);
-size_t strlen(const char *s);
-
-
-
-#endif
+	while(s[i])
+		i++;
+	return (i);
+}
+/*int main()
+{
+	printf("%zu\n", ft_strlen("BANKAI"));
+}*/
