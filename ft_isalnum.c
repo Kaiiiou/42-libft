@@ -6,7 +6,7 @@
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 10:54:35 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/10/23 00:55:22 by kai-iou          ###   ########.fr       */
+/*   Updated: 2024/10/29 15:09:09 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_isalnum(int c)
 {
-	if(ft_isalnum(c) || ft_isalpha(0))
+	if (ft_isdigit(c) || ft_isalpha(c))
 	{
 		return (1);
 	}
-		return (0);
+	return (0);
 }
