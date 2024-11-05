@@ -13,6 +13,8 @@ SOURCES = 			\
 	ft_memmove.c 	\
 	ft_strlcpy.c 	\
 	ft_strlcat.c 	\
+	ft_toupper.c 	\
+	ft_tolower.c 	\
 	
 
 OBJECTS = $(SOURCES:.c=.o)

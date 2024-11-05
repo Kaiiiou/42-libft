@@ -6,7 +6,7 @@
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 11:52:50 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/03 16:02:01 by kai-iou          ###   ########.fr       */
+/*   Updated: 2024/11/05 02:46:02 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,8 @@ void    *ft_memcpy(void *dst, const void *src, size_t n);
 void    *ft_memmove(void *dst, const void *src, size_t len);
 size_t ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t ft_strlcat(char *dst, const char *src, size_t dstsize);
+int    ft_toupper(int c);
+int    ft_tolower(int c);
+
 
 #endif
