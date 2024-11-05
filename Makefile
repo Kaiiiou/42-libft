@@ -8,7 +8,12 @@ SOURCES = 			\
 	ft_isascii.c 	\
 	ft_isalnum.c 	\
 	ft_memset.c 	\
-	ft_strlen.c 	\
+	ft_bzero.c 		\
+	ft_memcpy.c 	\
+	ft_memmove.c 	\
+	ft_strlcpy.c 	\
+	ft_strlcat.c 	\
+	
 
 OBJECTS = $(SOURCES:.c=.o)
 
@@ -16,7 +21,6 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
-
 $(NAME): $(OBJECTS)
 	$(AR) -r $@ $?
 
