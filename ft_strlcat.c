@@ -6,7 +6,7 @@
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 15:45:29 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/05 02:05:59 by kai-iou          ###   ########.fr       */
+/*   Updated: 2024/11/07 01:08:29 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 	
 	else
 	{
-		while((dstlen + i) < dstsize + 1)
+		while((dstlen + i))
 		{
 			dst[dstlen + i] = src[i];
 			i++;

@@ -1,45 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 02:22:01 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/07 01:03:42 by kai-iou          ###   ########.fr       */
+/*   Created: 2024/11/06 23:58:22 by kai-iou           #+#    #+#             */
+/*   Updated: 2024/11/07 02:17:26 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memmove(void *dst, const void *src, size_t len)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
-	unsigned char *dstv2;
-	unsigned char *srcv2;
+size_t i;
+i = 0;
 
-	if(dst == src || len == 0)
-		return(dst);
-	
-	i = 0;
-	dstv2 = (unsigned char*)dst;
-	srcv2 = (unsigned char*)src;
-
-	if(dstv2 > srcv2)
+while (i < n)
 	{
-	while(len > 0)
-		{
-			len--;
-			dstv2[len] = srcv2[len];
-		}	
+		if(s1[i] != s2[i] || s1[i] == '\0' || s2[i] == '\0')
+			return((unsigned char) s1[i] - (unsigned char) s2[i]);
+		i++;
 	}
-	else
-	{
-	while(i < len)
-		{
-			dstv2[i] = srcv2[i];
-			i++;
-		}
-	}
-		return(dst);
+	return(0);
 }

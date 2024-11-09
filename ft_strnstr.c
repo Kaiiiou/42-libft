@@ -1,45 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 02:22:01 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/07 01:03:42 by kai-iou          ###   ########.fr       */
+/*   Created: 2024/11/07 07:06:38 by kai-iou           #+#    #+#             */
+/*   Updated: 2024/11/09 03:42:40 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memmove(void *dst, const void *src, size_t len)
+char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t i;
-	unsigned char *dstv2;
-	unsigned char *srcv2;
+	size_t iv2;
 
-	if(dst == src || len == 0)
-		return(dst);
-	
 	i = 0;
-	dstv2 = (unsigned char*)dst;
-	srcv2 = (unsigned char*)src;
-
-	if(dstv2 > srcv2)
+	iv2 = 0;
+	
+	if(!needle[0])
+		return((char *)haystack);
+	
+	while(haystack[i] && i < len)
 	{
-	while(len > 0)
+		while(haystack[i + iv2] == needle[iv2] && haystack[i + iv2] != 0 && i + iv2 < len)
 		{
-			len--;
-			dstv2[len] = srcv2[len];
-		}	
-	}
-	else
-	{
-	while(i < len)
-		{
-			dstv2[i] = srcv2[i];
-			i++;
+			iv2++;
+			if(!needle[iv2])
+				return((char *)haystack + i);
 		}
+		i++;
+		iv2 = 0;
 	}
-		return(dst);
+	return(NULL);
 }

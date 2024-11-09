@@ -1,45 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 02:22:01 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/07 01:03:42 by kai-iou          ###   ########.fr       */
+/*   Created: 2024/11/07 01:31:43 by kai-iou           #+#    #+#             */
+/*   Updated: 2024/11/07 02:02:19 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memmove(void *dst, const void *src, size_t len)
-{
-	size_t i;
-	unsigned char *dstv2;
-	unsigned char *srcv2;
-
-	if(dst == src || len == 0)
-		return(dst);
-	
-	i = 0;
-	dstv2 = (unsigned char*)dst;
-	srcv2 = (unsigned char*)src;
-
-	if(dstv2 > srcv2)
+void *ft_memchr(const void *s, int c, size_t n)
 	{
-	while(len > 0)
-		{
-			len--;
-			dstv2[len] = srcv2[len];
-		}	
-	}
-	else
-	{
-	while(i < len)
-		{
-			dstv2[i] = srcv2[i];
-			i++;
-		}
-	}
-		return(dst);
+    unsigned char *sv2;
+    unsigned char cv2;
+    size_t i;
+
+    sv2 = (unsigned char *) s;
+    cv2 = (unsigned char) c;
+    i = 0;
+
+    while (i < n)
+    {
+       if (sv2[i] == cv2)
+           return ((void *) &sv2[i]);
+        i++;
+    }
+    return (NULL);
 }

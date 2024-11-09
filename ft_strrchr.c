@@ -1,45 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 02:22:01 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/07 01:03:42 by kai-iou          ###   ########.fr       */
+/*   Created: 2024/11/06 04:38:44 by kai-iou           #+#    #+#             */
+/*   Updated: 2024/11/06 21:53:10 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memmove(void *dst, const void *src, size_t len)
+char *ft_strrchr(const char *s, int c)
 {
-	size_t i;
-	unsigned char *dstv2;
-	unsigned char *srcv2;
+	int i;
 
-	if(dst == src || len == 0)
-		return(dst);
-	
-	i = 0;
-	dstv2 = (unsigned char*)dst;
-	srcv2 = (unsigned char*)src;
-
-	if(dstv2 > srcv2)
+	i = strlen(s);
+	while (i >= 0)
 	{
-	while(len > 0)
-		{
-			len--;
-			dstv2[len] = srcv2[len];
-		}	
+		if(s[i] == (char) c)
+			return ((char *) s + i); 
+		i--;
 	}
-	else
-	{
-	while(i < len)
-		{
-			dstv2[i] = srcv2[i];
-			i++;
-		}
-	}
-		return(dst);
+	return (NULL);
 }
