@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 01:31:43 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/21 17:22:23 by kai-iou          ###   ########.fr       */
+/*   Created: 2024/11/18 08:10:53 by kai-iou           #+#    #+#             */
+/*   Updated: 2024/11/21 20:33:10 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
-	{
-	unsigned char	*sv2;
-	unsigned char	cv2;
-	size_t			i;
+char	*ft_strtrim(char const *str, char const *chars)
+{
+	size_t	left;
+	size_t	right;
 
-	sv2 = (unsigned char *) s;
-	cv2 = (unsigned char) c;
-	i = 0;
-	while (i < n)
-	{
-		if (sv2[i] == cv2)
-			return ((void *) &sv2[i]);
-		i++;
-	}
-	return (NULL);
+	if (!str || !chars)
+		return (NULL);
+	left = 0;
+	while (str[left] && ft_strchr(chars, str[left]))
+		left++;
+	right = ft_strlen(str);
+	while (right > left && ft_strchr(chars, str[right - 1]))
+		right--;
+	return (ft_substr(str, left, right - left));
 }

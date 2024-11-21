@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 01:31:43 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/21 17:22:23 by kai-iou          ###   ########.fr       */
+/*   Created: 2024/11/13 02:53:01 by kai-iou           #+#    #+#             */
+/*   Updated: 2024/11/21 20:23:35 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
-	{
-	unsigned char	*sv2;
-	unsigned char	cv2;
-	size_t			i;
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
+{
+	char			*sv2;
+	unsigned int	i;
 
-	sv2 = (unsigned char *) s;
-	cv2 = (unsigned char) c;
+	if (!s || !f)
+		return (NULL);
+	sv2 = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!sv2)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		if (sv2[i] == cv2)
-			return ((void *) &sv2[i]);
+		sv2[i] = f(i, s[i]);
 		i++;
 	}
-	return (NULL);
+	sv2[i] = '\0';
+	return (sv2);
 }

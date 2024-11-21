@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 01:31:43 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/21 17:22:23 by kai-iou          ###   ########.fr       */
+/*   Created: 2024/11/11 23:33:21 by kai-iou           #+#    #+#             */
+/*   Updated: 2024/11/21 17:41:56 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
-	{
-	unsigned char	*sv2;
-	unsigned char	cv2;
-	size_t			i;
-
-	sv2 = (unsigned char *) s;
-	cv2 = (unsigned char) c;
-	i = 0;
-	while (i < n)
-	{
-		if (sv2[i] == cv2)
-			return ((void *) &sv2[i]);
-		i++;
-	}
-	return (NULL);
+void	ft_putchar_fd(char c, int fd)
+{
+	write (fd, &c, 1);
 }

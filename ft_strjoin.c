@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 01:31:43 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/21 17:22:23 by kai-iou          ###   ########.fr       */
+/*   Created: 2024/11/12 00:53:17 by kai-iou           #+#    #+#             */
+/*   Updated: 2024/11/21 20:14:19 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
-	{
-	unsigned char	*sv2;
-	unsigned char	cv2;
-	size_t			i;
+char	*ft_strjoin(const char *s1, const char *s2)
+{
+	size_t	lens1;
+	size_t	lens2;
+	char	*fdst;
+	size_t	i;
+	size_t	iv2;
 
-	sv2 = (unsigned char *) s;
-	cv2 = (unsigned char) c;
+	lens1 = ft_strlen(s1);
+	lens2 = ft_strlen(s2);
 	i = 0;
-	while (i < n)
+	iv2 = 0;
+	fdst = (char *)malloc(lens1 + lens2 + 1);
+	if (!fdst)
+		return (NULL);
+	while (i < lens1)
 	{
-		if (sv2[i] == cv2)
-			return ((void *) &sv2[i]);
+		fdst[i] = s1[i];
 		i++;
 	}
-	return (NULL);
+	while (iv2 < lens2)
+	{
+		fdst[i + iv2] = s2[iv2];
+		iv2++;
+	}
+	fdst[i + iv2] = '\0';
+	return (fdst);
 }

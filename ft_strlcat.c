@@ -6,40 +6,40 @@
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 15:45:29 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/07 01:08:29 by kai-iou          ###   ########.fr       */
+/*   Updated: 2024/11/21 20:18:50 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	srclen;
 	size_t	dstlen;
-	size_t 	i;
+	size_t	i;
 
 	srclen = ft_strlen(src);
 	dstlen = ft_strlen(dst);
-	i 	   = 0;
-
+	i = 0;
 	if (dstlen >= dstsize)
 		return (dstsize + srclen);
-	
-	else if (srclen < dstsize - dstlen)
-		while (i != srclen + 1)
+	if (srclen < dstsize - dstlen - 1)
+	{
+		while (src[i] != '\0')
 		{
 			dst[dstlen + i] = src[i];
 			i++;
 		}
-	
+		dst[dstlen + i] = '\0';
+	}
 	else
 	{
-		while((dstlen + i))
+		while (i < dstsize - dstlen - 1 && src[i] != '\0')
 		{
 			dst[dstlen + i] = src[i];
 			i++;
 		}
-		dst[dstsize -1] = '\0';
+		dst[dstlen + i] = '\0';
 	}
-	return(dstlen + srclen);
+	return (dstlen + srclen);
 }

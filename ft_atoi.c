@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 01:31:43 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/21 17:22:23 by kai-iou          ###   ########.fr       */
+/*   Created: 2024/11/10 15:14:15 by kai-iou           #+#    #+#             */
+/*   Updated: 2024/11/21 16:28:08 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
-	{
-	unsigned char	*sv2;
-	unsigned char	cv2;
-	size_t			i;
+int	ft_atoi(const char *str)
+{
+	size_t	i;
+	int		nega;
+	int		result;
 
-	sv2 = (unsigned char *) s;
-	cv2 = (unsigned char) c;
 	i = 0;
-	while (i < n)
+	nega = 1;
+	result = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if ((str[i] == '-') || (str[i] == '+'))
 	{
-		if (sv2[i] == cv2)
-			return ((void *) &sv2[i]);
+		if (str[i] == '-')
+			nega = -1;
 		i++;
 	}
-	return (NULL);
+	while (ft_isdigit(str[i]))
+	{
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	return (nega * result);
 }

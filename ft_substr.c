@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 01:31:43 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/21 17:22:23 by kai-iou          ###   ########.fr       */
+/*   Created: 2024/11/17 07:54:09 by kai-iou           #+#    #+#             */
+/*   Updated: 2024/11/21 20:34:32 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
-	{
-	unsigned char	*sv2;
-	unsigned char	cv2;
-	size_t			i;
+char	*ft_substr(const char *s, unsigned int start, size_t len)
+{
+	char	*result;
+	size_t	i;
+	size_t	slen;
 
-	sv2 = (unsigned char *) s;
-	cv2 = (unsigned char) c;
+	if (!s)
+		return (NULL);
+	slen = strlen(s);
 	i = 0;
-	while (i < n)
+	if (start >= slen)
+		return (ft_strdup (""));
+	if (start + len > slen)
+		len = slen - start;
+	result = (char *)malloc((len + 1) * sizeof (char));
+	if (!result)
+		return (NULL);
+	while (i < len && s[start + i])
 	{
-		if (sv2[i] == cv2)
-			return ((void *) &sv2[i]);
+		result[i] = s[start + i];
 		i++;
 	}
-	return (NULL);
+	result[i] = '\0';
+	return (result);
 }

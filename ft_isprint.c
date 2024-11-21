@@ -6,17 +6,17 @@
 /*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 01:15:21 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/10/29 15:04:04 by kai-iou          ###   ########.fr       */
+/*   Updated: 2024/11/21 16:59:57 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-	if(c >= 32 && c <= 126)
+	if (c >= 32 && c <= 126)
 	{
-		return(1);
+		return (1);
 	}
-		return(0);
+	return (0);
 }
