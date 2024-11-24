@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 06:43:08 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/21 17:23:20 by kai-iou          ###   ########.fr       */
+/*   Updated: 2024/11/24 22:38:18 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+// int main(void)
+// {
+// 	printf("%d\n", ft_memcmp("BANKBI", "BANKAI", 4));
+// }

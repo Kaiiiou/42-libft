@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 07:16:30 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/21 17:17:03 by kai-iou          ###   ########.fr       */
+/*   Updated: 2024/11/24 22:20:24 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,3 +53,14 @@ char	*ft_itoa(int n)
 		result[0] = '0';
 	return (result);
 }
+// int main(void)
+// {
+//     char *str;
+
+//     str = ft_itoa(12345);
+//     if (str)
+//     {
+//         printf("ft_itoa(12345) = %s\n", str);
+//         free(str);
+//     }
+// }

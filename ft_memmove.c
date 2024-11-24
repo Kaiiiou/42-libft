@@ -6,12 +6,12 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 02:22:01 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/24 08:03:15 by amarti           ###   ########.fr       */
+/*   Updated: 2024/11/24 23:49:06 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+//comme memcpy mais gere les overlap(copie src dans dst)
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t			i;
@@ -38,3 +38,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
+// int main(void)
+// {
+// 	char    dest[50] = "HAKKANOTOGAME";
+// 	char    src[50] = "BANKAI";
+
+// 	ft_memcpy(dest, src, 4);
+// 	printf("%s\n", dest);
+// }

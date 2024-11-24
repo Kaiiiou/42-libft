@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 01:31:43 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/21 17:22:23 by kai-iou          ###   ########.fr       */
+/*   Updated: 2024/11/24 22:29:43 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+// int main(void)
+// {
+// 	printf("%p\n", ft_memchr("BANKAI", 'Z', 9));
+// }

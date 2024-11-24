@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 23:06:14 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/21 17:40:55 by kai-iou          ###   ########.fr       */
+/*   Updated: 2024/11/24 23:47:43 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,10 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
+// int main(void)
+// {
+// 	char test[50] = "BANKAI KATEN KYÔKOTSU KARAMATSU SHINJU";
+
+// 	ft_memset(test, 'B', 20);
+// 	printf("%s\n", test);
+// }

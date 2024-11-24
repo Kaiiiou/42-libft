@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 22:09:57 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/21 20:21:26 by kai-iou          ###   ########.fr       */
+/*   Updated: 2024/11/24 22:13:46 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-/*int main()
-{
-	printf("%zu\n", ft_strlen("BANKAI"));
-}*/
+// int main()
+// {
+// 	printf("%zu\n", ft_strlen("BANKAI"));
+// }
