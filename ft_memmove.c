@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 02:22:01 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/21 17:37:16 by kai-iou          ###   ########.fr       */
+/*   Updated: 2024/11/24 08:03:15 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	srcv2 = (unsigned char *)src;
 	if (dstv2 > srcv2)
 	{
-		while (len > 0)
-		{
-			len--;
+		while (len-- > 0)
 			dstv2[len] = srcv2[len];
-		}
 	}
 	else
 	{
