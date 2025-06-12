@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 22:09:57 by kai-iou           #+#    #+#             */
-/*   Updated: 2024/11/24 22:13:46 by amarti           ###   ########.fr       */
+/*   Updated: 2025/06/12 15:39:16 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen(const char *s)
 	int	i;
 
 	i = 0;
+	if(!s)
+		return 0;
 	while (s[i])
 		i++;
 	return (i);
