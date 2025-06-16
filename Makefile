@@ -35,8 +35,7 @@ SOURCES = 			\
 	ft_itoa.c 		\
 	ft_strtrim.c 	\
 	ft_split.c 		\
-
-
+	ft_printf.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
